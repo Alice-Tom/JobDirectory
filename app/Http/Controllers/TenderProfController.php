@@ -48,7 +48,8 @@ class TenderProfController extends Controller
             'pnumberref' => $request->pnumberref
            
        ]);
-       return back()->with('post_created','succes');
+       $request->session()->flash('success', 'Profile updated successfully.');
+       return redirect()->back();
     }
 
     /**

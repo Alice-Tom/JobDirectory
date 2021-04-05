@@ -45,7 +45,7 @@ class JobApplicationController extends Controller
         $applicantId = Auth::user()->applicant->id;
         $job->applicants()->attach($applicantId);
         
-        $request->session()->flash('success', 'Job edited successfully. Please wait for your confirmation');
+        $request->session()->flash('success', 'Job edited successfully. Please wait for your confirmation.');
         return redirect()->back();
        
     }
