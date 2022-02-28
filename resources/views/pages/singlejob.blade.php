@@ -173,9 +173,8 @@
                          <!-- register -->
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button class="btn btn-success" type="submit"> 
-                                    Apply
-                                </button>
+                                <button class="btn btn-success" type="submit"> <a class="buttona" onclick="return confirm('Are you sure you want to apply for the post {{$jobs->job_title}} in {{$jobs->company_name}} ?')">Apply</button></a>
+                                
                                 
                             </div>
                         </div>

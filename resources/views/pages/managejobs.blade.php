@@ -27,11 +27,7 @@
         
       <table  class="table table-hover" >
           <thead>
-
-            
             <tr>
-              
-       
               <th scope="col">Job Title</th>
               <th scope="col">Company Name</th>
               <th scope="col">Job Location</th>
@@ -41,12 +37,10 @@
               <th scope="col">Action</th>
             </tr>
           </thead>
-       
+
           <tbody>
-           
             <tr>
-            
-        @foreach ($jobs as $jobs) 
+          @foreach ($jobs as $jobs) 
               <td>{{$jobs->job_title}}</td>
               <td>{{$jobs->company_name}}</td>
               <td>{{$jobs->job_location}}</td>
@@ -58,22 +52,15 @@
                 <br>
               <button class="button2"> <a class="buttona" onclick="return confirm('Are you sure you want to delete {{$jobs->job_title}} in {{$jobs->company_name}} ?')" href="/company/deletejobs/{{$jobs->id}}">Delete</button></a></td>
             </tr>
-            @endforeach
-              
+          @endforeach
           </tbody>
         </table>
-        
-
-
-
       </div>
     </div>
   </div>
 
-
   @include('includes.dashfooter')
   
-
   <script src="vendors/jquery/dist/jquery.min.js"></script>
   <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
   <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>

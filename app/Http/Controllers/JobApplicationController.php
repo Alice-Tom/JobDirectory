@@ -41,18 +41,17 @@ class JobApplicationController extends Controller
      */
     public function store(Request $request, $id)
     {
-        $job = JobApplication::find($id);
+        $job = Job::find($id);
         $applicantId = Auth::user()->applicant->id;
         $job->applicants()->attach($applicantId);
-        
-        $request->session()->flash('success', 'Job edited successfully. Please wait for your confirmation.');
+        $request->session()->flash('success', 'Job applied successfully. Please wait for your confirmation.');
         return redirect()->back();
        
     }
 
     public function getAllApplicants()
     {
-         $jobs = DB::table('job_applications')->get();
+         $jobs = DB::table('applicant_job')->get();
         // $jobs = DB::table('job_applications')->where('id',$jobs->jobs_id)->value('company_name');
         return view('pages.job_applicants',compact('jobs'));
     }

@@ -9,11 +9,7 @@
 
 @include('includes.topnav')
 
- 
-
     {{-- postedjobs table --}}
-
-
   <div class="container">
     <div class="row">
    
@@ -23,11 +19,7 @@
         
       <table  class="table table-hover" >
           <thead>
-
-            
             <tr>
-              
-       
               <th scope="col">First Name</th>
               <th scope="col">Last Name</th>
               <th scope="col">Address</th>
@@ -38,11 +30,9 @@
           </thead>
        
           <tbody>
-           
             <tr>
-            
         @foreach ($jobs as $jobs) 
-              <td>{{$jobs->pivot->first_name}}</td>
+              {{-- <td>{{$jobs->first_name}}</td> --}}
               <td>{{$jobs->applicant_id}}</td>
               {{-- <td>{{$jobs->company_name}}</td>
               <td>{{$jobs->job_location}}</td>
@@ -50,22 +40,13 @@
               <td>{{$jobs->deadline}}</td>
               <td>{{$jobs->job_type}}</td> --}}
               <td> <button class="button"> <a class="buttona" href="/singlejob/{{$jobs->id}}">View</button></a>
-              
             </tr>
-            @endforeach
-              
+        @endforeach
           </tbody>
         </table>
-        
-
-
-
       </div>
     </div>
   
-
-
-
 @endsection
 
 
